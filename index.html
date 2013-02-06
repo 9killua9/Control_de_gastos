@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+    <script type="text/javascript" charset="utf-8" src="js/cordova-2.3.0.js"></script>
+    <!-- CSS -->
+            <link rel="stylesheet" type="text/css" href="css/gral.css" />
+            <link rel="stylesheet" type="text/css" href="css/jquerycss.css" />
+            <link rel="stylesheet" type="text/css" href="css/site.css" />
+            <!-- Jquerys  -->
+            <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/jquerymobile.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/gral.js?v=6"></script>
+
+            <script type="text/javascript" charset="utf-8">
+
+              // Wait for Cordova to connect with the device
+              //
+              document.addEventListener("deviceready",onDeviceReady,false);
+
+              // Cordova is ready
+              //
+              function onDeviceReady() {
+              }
+              // Retrieve an existing file, or create it if it does not exist
+            </script>
+  </head>
+
+  <body  onload="funcionesDeCarga()" style="background-color:#3b3b3b">
+    <div class="oculto">
+      <div id="guardaCelular"></div>
+    </div>
+    <div data-role="page" id="etapaInicial">
+      <div data-role="header">
+        <h1>Ingresa !</h1>
+      </div><!-- /header -->
+      <div data-role="content">   
+        <div class=""> Nro Celular </div>
+        <input type="text" name="numero" id="numero" value="" placeholder="11355689XX" />
+        
+        <div class=""> Mail </div>
+        <input type="email" name="email" id="email" value="" placeholder="minombreyapellido@hotmail.es" />
+        <input type="button" id="validar" value=" Entrar " data-transition="fade" data-role="button" data-inline="true" />
+        
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+    <div data-role="page" id="etapa0">
+      <div data-role="header">
+        <h1>Bienvenido</h1>
+      </div><!-- /header -->
+      <div data-role="content">
+          <div class="backTotal w100"> Total : <span id="total"> </span></div>
+          <a href="#etapa1" data-transition="fade" data-role="button" data-icon="search"> Qu&eacute; gast&eacute;? </a>
+          <a href="#etapa4" data-transition="fade" data-role="button" data-icon="search"> Qu&eacute; cobr&eacute;? </a>
+          <a href="#etapa2" id="resumen" data-role="button" data-icon="search"> Ver Resumen <a>
+          <div class="oculto" id="cargainicialmenucontenedor"><a href="#etapa3" id="cargaInicialMenu" class="oculto" data-role="button" data-icon="search"> Cargar monto inicial <a>  </div>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="etapa1">
+    <div data-role="header">
+      <h1>Qu&eacute; gast&eacute;?</h1>
+    </div><!-- /header -->
+    <div data-role="content">   
+        <div class=""> Monto </div>
+        <input type="text" name="gasto" id="name" value="" placeholder="ej: 300" />
+
+        <div class=""> Causa </div>
+        <input type="text" name="causa" id="causa" value="" placeholder="ej:Farmacity - (no obligatorio)" />
+        
+        <input type="button" id="enviarGasto" value=" Cargar " data-transition="fade" data-role="button" data-inline="true" />
+
+        <a href="#etapa0" data-transition="fade" data-role="button" data-inline="true">Volver al menu</a>
+    </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="etapa2">
+    <div data-role="header">
+      <h1>Ver resumen de gastos</h1>
+    </div><!-- /header -->
+    <div data-role="content">
+        <a href="#etapa0" data-transition="fade" data-role="button" data-inline="true">Volver al menu</a>
+        <div class="resumen" id="muestraResumen">
+            
+        </div>
+    </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="etapa3">
+    <div data-role="header">
+      <h1>Carga del monto inicial</h1>
+    </div><!-- /header -->
+    <div data-role="content">   
+        <input type="text" name="gasto" id="cargainicial" value="" placeholder="ej: 300" />
+        <input type="button" id="enviar" value=" Cargar " data-transition="fade" data-role="button" data-inline="true" />
+
+        <a href="#etapa0" data-transition="fade" data-role="button" data-inline="true">Volver al menu</a>
+    </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="etapa4">
+    <div data-role="header">
+      <h1>Qu&eacute; cobr&eacute; ?</h1>
+    </div><!-- /header -->
+    <div data-role="content">   
+        <div class=""> Monto </div>
+        <input type="text" name="cobro" id="cobroinicial" value="" placeholder="ej: 300" />
+
+        <div class=""> Cliente </div>
+        <input type="text" name="cliente" id="cliente" value="" placeholder="ej:Farmacity - (no obligatorio)" />
+        
+        <input type="button" id="enviarCobro" value=" Cargar " data-transition="fade" data-role="button" data-inline="true" />
+
+        <a href="#etapa0" data-transition="fade" data-role="button" data-inline="true">Volver al menu</a>
+    </div><!-- /content -->
+  </div><!-- /page -->
+</form>
+  </body>
+</html>
